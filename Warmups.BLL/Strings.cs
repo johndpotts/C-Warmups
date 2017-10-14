@@ -18,5 +18,10 @@ namespace Warmups.BLL
         {
             return string.Format("{0}{1}{1}{0}", a, b);
         }
+
+        public string MakeTags(string tag, string content)
+        {
+            return "<" + tag + ">" + content + "</" + tag + ">";
+        }
     }
 }

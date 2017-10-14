@@ -39,6 +39,18 @@ namespace Warmups.Tests
          
         }
 
+        [TestCase("i", "Yay", "<i>Yay</i>")]
+        [TestCase("i", "Hello", "<i>Hello</i>")]
+        [TestCase("cite", "Yay", "<cite>Yay</cite>")]
+        public void MakeTagsTest(string tag, string content, string expected)
+        {
+            Strings obj = new Strings();
+
+            string actual = obj.MakeTags(tag, content);
+
+            Assert.AreEqual(expected, actual);
+
+        }
 
     }
 }

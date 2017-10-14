@@ -13,11 +13,24 @@ namespace Warmups.Tests
         {
             // arrange
             Logic obj = new Logic();
-
+            
             // act
             bool actual = obj.GreatParty(cigars, isWeekend);
 
             // assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestCase(1, 8, 0)]
+        [TestCase(9, 2, 0)]
+        [TestCase(3, 4, 1)]
+        [TestCase(6, 9, 2)]
+        public void CanHazTableTest(int yourStyle, int dateStyle, int expected)
+        {
+            Logic obj = new Logic();
+
+            int actual = obj.CanHazTable(yourStyle, dateStyle);
+
             Assert.AreEqual(expected, actual);
         }
     }
